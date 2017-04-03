@@ -41,11 +41,13 @@ router.get('/', function(req, res, next) {
 		$('tr').each(function(i, element){   //$('<tr>').each(function(i, element){
             var className = element.attribs.class
                 // console.log('CLASS= '+className)
-                if (className == 'winner') {     //if (element = 'winner') {
+                if (className == 'winner' || className == 'loser') {     //if (element = 'winner') {
                 	console.log('CLASS= '+className)
-                	// console.log('CHILDREN: '+element.children.length)
+                	console.log('CHILDREN: '+element.children.length)
                 	var td = element.children[0]
-                	console.log('TD TAG: '+td)
+                	// console.log('TD TAG: '+td.children.length)
+                	var anchor = td.children[0]
+                	console.log('ANCHOR: '+anchor.children.length)
                 }
 
 			// var attribs = element.attribs

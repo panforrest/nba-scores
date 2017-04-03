@@ -26,12 +26,25 @@ router.get('/', function(req, res, next) {
 			return
 		}
 
+		// WINNER:
+		//  <tr class="winner">
+		//	  <td>
+		//	    <a href="/teams/ATL/2017.html">Atlanta</a>
+		//    </td>
+		//    <td class="right">113</td>
+		//    <td class="right gamelink">
+		//      <a href="/boxscores/201702020HOU.html">Final</a>
+		//	  </td>
+		//	</tr>
+
 		$ = cheerio.load(response.text)
 		$('tr').each(function(i, element){   //$('<tr>').each(function(i, element){
             var className = element.attribs.class
                 // console.log('CLASS= '+className)
                 if (className == 'winner') {     //if (element = 'winner') {
                 	console.log('CLASS= '+className)
+                	console.log('CHILDREN: '+element.children.length)
+                	// var td = element.children[0]
                 }
 
 			// var attribs = element.attribs

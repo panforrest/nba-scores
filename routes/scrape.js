@@ -43,8 +43,9 @@ router.get('/', function(req, res, next) {
                 // console.log('CLASS= '+className)
                 if (className == 'winner') {     //if (element = 'winner') {
                 	console.log('CLASS= '+className)
-                	console.log('CHILDREN: '+element.children.length)
-                	// var td = element.children[0]
+                	// console.log('CHILDREN: '+element.children.length)
+                	var td = element.children[0]
+                	console.log('TD TAG: '+td)
                 }
 
 			// var attribs = element.attribs

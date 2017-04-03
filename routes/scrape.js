@@ -30,7 +30,7 @@ router.get('/', function(req, res, next) {
 		$('tr').each(function(i, element){   //$('<tr>').each(function(i, element){
             var className = element.attribs.class
                 // console.log('CLASS= '+className)
-                if (className = 'winner') {     //if (element = 'winner') {
+                if (className == 'winner') {     //if (element = 'winner') {
                 	console.log('CLASS= '+className)
                 }
 

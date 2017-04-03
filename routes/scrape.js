@@ -29,7 +29,10 @@ router.get('/', function(req, res, next) {
 		$ = cheerio.load(response.text)
 		$('tr').each(function(i, element){   //$('<tr>').each(function(i, element){
             var className = element.attribs.class
-                console.log('CLASS= '+className)
+                // console.log('CLASS= '+className)
+                if (className = 'winner') {     //if (element = 'winner') {
+                	console.log('CLASS= '+className)
+                }
 
 			// var attribs = element.attribs
 			// if (attribs != null){

@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var superagent = require('superagent')
+var cheerio = require('cheerio')
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -24,6 +25,17 @@ router.get('/', function(req, res, next) {
 			})
 			return
 		}
+
+		$ = cheerio.load(response.text)
+		$('tr').each(function(i, element){   //$('<tr>').each(function(i, element){
+            var className = element.attribs.class
+                console.log('CLASS= '+className)
+
+			// var attribs = element.attribs
+			// if (attribs != null){
+			// 	console.log()
+			// }
+		})
 
 		res.send(response.text)
 	})
